@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --duration: 2s;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(100, 144, 255);
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: rgb(228, 255, 255);
+  z-index: -1;
+}
+
+nav {
+  display: flex;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 350px;
+  height: 75px;
+  transition: all var(--duration);
+}
+
+ul {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  transition: all var(--duration);
+}
+
+li {
+  margin: 0 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  transition: all var(--duration);
+}
+
+button {
+  right: 20px;
+  top: 50%;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  margin-right: 10px;
+  margin-left: 20px;
+  outline: 0;
+}
+
+.bar {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: rgb(116, 135, 213);
+  transition: all var(--duration);
+}
+
+.bar:nth-child(1) {
+  transform: rotate(45deg);
+}
+.bar:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.hide {
+  width: 60px;
+  transition: all var(--duration);
+}
+
+.hide .bar:nth-child(1) {
+  transform: rotate(-720deg) translateY(5.5px);
+  transition: all var(--duration);
+}
+.hide .bar:nth-child(2) {
+  transform: rotate(720deg) translateY(-5.5px);
+  transition: all var(--duration);
+}
+
+.hide ul {
+  transform: translateX(30%);
+  transition: all var(--duration);
+}
+.hide ul li a {
+  display: block;
+  transform: rotate3d(0, 1, 0, 1turn);
+  opacity: 0;
+  transition: all var(--duration);
+}
+
+/* @keyframes nav {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0.2);
+  }
+} */
